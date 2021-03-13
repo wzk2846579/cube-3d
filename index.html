@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>3d图片动画展示</title>
+        <style>
+            html {
+                perspective: 800px;
+            }
+            .cube {
+                width: 200px;
+                height: 200px;
+                margin: 100px auto;
+                transform-style: preserve-3d;
+                animation: img-cube 20s infinite linear;
+            }
+            .cube>div {
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                overflow: hidden;
+            }
+            .cube img {
+                vertical-align: top;
+            }
+            #img-wrapper-1 {
+                transform: rotateY(90deg) translateZ(100px);
+            }
+            #img-wrapper-2 {
+                transform: rotateY(-90deg) translateZ(100px);
+            }
+            #img-wrapper-3 {
+                transform: rotateX(90deg) translateZ(100px);
+            }
+            #img-wrapper-4 {
+                transform: rotateX(-90deg) translateZ(100px);
+            }
+            #img-wrapper-5 {
+                transform: rotateY(180deg) translateZ(100px);
+            }
+            #img-wrapper-6 {
+                transform: rotateY(0deg) translateZ(100px);
+            }
+
+            @keyframes img-cube {
+                from {
+                    transform: rotateX(0) rotateY(0);
+                }
+                to {
+                    transform: rotateX(1turn) rotateY(1turn);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="cube">
+            <div id="img-wrapper-1">
+                <img src="./img/1.jpg" alt="">
+            </div>
+            <div id="img-wrapper-2">
+                <img src="./img/2.jpg" alt="">
+            </div>
+            <div id="img-wrapper-3">
+                <img src="./img/3.jpg" alt="">
+            </div>
+            <div id="img-wrapper-4">
+                <img src="./img/4.jpg" alt="">
+            </div>
+            <div id="img-wrapper-5">
+                <img src="./img/5.jpg" alt="">
+            </div>
+            <div id="img-wrapper-6">
+                <img src="./img/6.jpg" alt="">
+            </div>
+        </div>
+    </body>
+</html>
